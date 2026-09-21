@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>anime-loads</Name>
+  <Repository>vequaz/anime-loads:latest</Repository>
+  <Registry>https://hub.docker.com/r/vequaz/anime-loads</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Vequaz/animeloads-unraid</Support>
+  <Project>https://github.com/Vequaz/animeloads-unraid</Project>
+  <Overview>Anime-Loads bot for automatically checking configured anime and sending new episodes to MyJDownloader.</Overview>
+  <Category>Downloaders:</Category>
+  <ExtraParams>--shm-size=2g</ExtraParams>
+  <TemplateURL>https://raw.githubusercontent.com/Vequaz/unraid-templates/main/templates/anime-loads.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Vequaz/unraid-templates/main/icons/anime-loads.png</Icon>
+  <Config Name="Anime-Loads Config" Target="/usr/src/app/config" Default="/mnt/cache/appdata/anime-loads" Mode="rw" Description="Persistent configuration directory containing ani.json." Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/anime-loads</Config>
+  <Config Name="Config Directory" Target="CONFIG_DIR" Default="/usr/src/app/config" Mode="env" Description="Configuration directory inside the container." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/usr/src/app/config</Config>
+  <Config Name="Browser Location" Target="BROWSERLOCATION" Default="/usr/bin/chromium" Mode="env" Description="Path to Chrome inside the container." Type="Variable" Display="advanced-hide" Required="true" Mask="false">/usr/bin/chromium</Config>
+  <Config Name="Hoster" Target="HOSTER" Default="rapidgator" Mode="env" Description="Download hoster: rapidgator or ddownload." Type="Variable" Display="always" Required="true" Mask="false">rapidgator</Config>
+  <Config Name="Time Delay" Target="TIMEDELAY" Default="3600" Mode="env" Description="Seconds between update checks." Type="Variable" Display="always" Required="true" Mask="false">3600</Config>
+  <Config Name="MyJDownloader User" Target="MYJD_USER" Default="" Mode="env" Description="MyJDownloader account email/username." Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="MyJDownloader Password" Target="MYJD_PASS" Default="" Mode="env" Description="MyJDownloader account password." Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="MyJDownloader Device" Target="MYJD_DEVICE" Default="" Mode="env" Description="Exact MyJDownloader device name." Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Anime-Loads User" Target="AL_USER" Default="" Mode="env" Description="Optional Anime-Loads username." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Anime-Loads Password" Target="AL_PASS" Default="" Mode="env" Description="Optional Anime-Loads password." Type="Variable" Display="always" Required="false" Mask="true"></Config>
+</Container>
