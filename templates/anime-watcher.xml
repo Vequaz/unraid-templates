@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>anime-watcher</Name>
-  <Repository>anime-watcher:local</Repository>
+  <Repository>vequaz/anime-watcher:latest</Repository>
+  <Registry>https://hub.docker.com/r/vequaz/anime-watcher</Registry>
   <Network>none</Network>
   <Privileged>false</Privileged>
   <Support>https://github.com/Vequaz/anime-watcher</Support>
