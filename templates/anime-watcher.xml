@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>anime-watcher</Name>
+  <Repository>anime-watcher:local</Repository>
+  <Network>none</Network>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Vequaz/anime-watcher</Support>
+  <Project>https://github.com/Vequaz/anime-watcher</Project>
+  <Overview>Normalizes anime media using ffmpeg. CLI-only service (no WebUI). Existing HEVC is copied; new encodes target HEVC Main10. Audio/subtitle tracks for German, Japanese and undetermined languages are kept.</Overview>
+  <Category>MediaApp:Other</Category>
+  <ExtraParams>--user=99:100 --cap-drop=ALL --security-opt=no-new-privileges</ExtraParams>
+  <TemplateURL>https://raw.githubusercontent.com/Vequaz/unraid-templates/main/templates/anime-watcher.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Vequaz/unraid-templates/main/icons/anime-watcher.png</Icon>
+  <Config Name="Media (read-only)" Target="/media" Default="/mnt/user/media" Mode="ro" Description="Source media root" Type="Path" Display="always" Required="true">/mnt/user/media</Config>
+  <Config Name="Output (read-write)" Target="/output" Default="/mnt/user/media-normalized" Mode="rw" Description="Normalized output root" Type="Path" Display="always" Required="true">/mnt/user/media-normalized</Config>
+  <Config Name="Config/State (read-write)" Target="/config" Default="/mnt/user/appdata/anime-watcher" Mode="rw" Description="State and settings" Type="Path" Display="always" Required="true">/mnt/user/appdata/anime-watcher</Config>
+  <Config Name="Cache/Work (read-write)" Target="/Cache" Default="/mnt/cache/anime-watcher-work" Mode="rw" Description="Encode + verify staging (must be separate from media/output/config)" Type="Path" Display="always" Required="true">/mnt/cache/anime-watcher-work</Config>
+  <Config Name="DRY_RUN" Target="DRY_RUN" Default="true" Mode="" Description="Set false to enable writes" Type="Variable" Display="always" Required="false">true</Config>
+  <Config Name="POLL_SECONDS" Target="POLL_SECONDS" Default="30" Mode="" Description="Watch poll interval" Type="Variable" Display="always" Required="false">30</Config>
+  <Config Name="SETTLE_SECONDS" Target="SETTLE_SECONDS" Default="120" Mode="" Description="Settle window" Type="Variable" Display="always" Required="false">120</Config>
+  <Config Name="CRF" Target="CRF" Default="20" Mode="" Description="x265 CRF (no two-pass)" Type="Variable" Display="always" Required="false">20</Config>
+  <Config Name="PRESET" Target="PRESET" Default="slow" Mode="" Description="x265 encoder preset" Type="Variable" Display="always" Required="false">slow</Config>
+  <Config Name="AUDIO_ENCODER" Target="AUDIO_ENCODER" Default="copy" Mode="" Description="copy keeps audio untouched (ignores bitrate); opus re-encodes at AUDIO_BITRATE keeping channels" Type="Variable" Display="always" Required="false">copy</Config>
+  <Config Name="AUDIO_BITRATE" Target="AUDIO_BITRATE" Default="256k" Mode="" Description="Opus bitrate when AUDIO_ENCODER=opus" Type="Variable" Display="always" Required="false">256k</Config>
+  <Config Name="DEBLOCK" Target="DEBLOCK" Default="false" Mode="" Description="Enable encoder deblocking (off to avoid blurring line art)" Type="Variable" Display="always" Required="false">false</Config>
+  <Config Name="THREADS" Target="THREADS" Default="2" Mode="" Description="FFmpeg threads" Type="Variable" Display="always" Required="false">2</Config>
+  <Config Name="VERIFY_DECODE" Target="VERIFY_DECODE" Default="true" Mode="" Description="Verify decode after encode" Type="Variable" Display="always" Required="false">true</Config>
+</Container>
