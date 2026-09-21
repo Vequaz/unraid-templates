@@ -17,7 +17,7 @@
   <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/animel-telegram/config" Mode="rw" Description="Persistent application data." Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Telegram Bot Token" Target="TELEGRAM_BOT_TOKEN" Default="" Mode="" Description="Telegram bot token." Type="Variable" Display="always" Required="true" Mask="true"/>
   <Config Name="Allowed Telegram Users" Target="TELEGRAM_ALLOWED_USERS" Default="" Mode="" Description="Comma-separated Telegram user IDs." Type="Variable" Display="always" Required="true" Mask="false"/>
-  <Config Name="Hoster" Target="HOSTER" Default="rapidgator" Mode="" Description="Download hoster." Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Hoster" Target="HOSTER" Default="rapidgator" Mode="" Description="Download hoster: rapidgator or ddownload." Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="Browser Location" Target="BROWSERLOCATION" Default="/usr/bin/chromium" Mode="" Description="Chromium binary inside the container." Type="Variable" Display="advanced" Required="true" Mask="false"/>
   <Config Name="MyJDownloader User" Target="MYJD_USER" Default="" Mode="" Description="MyJDownloader account email/user." Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="MyJDownloader Password" Target="MYJD_PASS" Default="" Mode="" Description="MyJDownloader account password." Type="Variable" Display="always" Required="true" Mask="true"/>
