@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>animel-telegram</Name>
+  <Repository>vequaz/animel-telegram:latest</Repository>
+  <Registry>https://hub.docker.com/r/vequaz/animel-telegram</Registry>
+  <Network>bridge</Network>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <ExtraParams>--shm-size=2g</ExtraParams>
+  <Project>https://github.com/Vequaz/animel-telegram</Project>
+  <Support>https://github.com/Vequaz/animel-telegram</Support>
+  <Overview>Telegram bot for Anime-Loads requests with automatic release selection and MyJDownloader transfer.</Overview>
+  <Category>Downloaders:</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/Vequaz/unraid-templates/main/templates/animel-telegram.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Vequaz/unraid-templates/main/icons/animel-telegram.png</Icon>
+  <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/animel-telegram/config" Mode="rw" Description="Persistent application data." Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Telegram Bot Token" Target="TELEGRAM_BOT_TOKEN" Default="" Mode="" Description="Telegram bot token." Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="Allowed Telegram Users" Target="TELEGRAM_ALLOWED_USERS" Default="" Mode="" Description="Comma-separated Telegram user IDs." Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Hoster" Target="HOSTER" Default="rapidgator" Mode="" Description="Download hoster." Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Browser Location" Target="BROWSERLOCATION" Default="/usr/bin/chromium" Mode="" Description="Chromium binary inside the container." Type="Variable" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="MyJDownloader User" Target="MYJD_USER" Default="" Mode="" Description="MyJDownloader account email/user." Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="MyJDownloader Password" Target="MYJD_PASS" Default="" Mode="" Description="MyJDownloader account password." Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="MyJDownloader Device" Target="MYJD_DEVICE" Default="" Mode="" Description="Exact MyJDownloader device name." Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Anime-Loads User" Target="AL_USER" Default="" Mode="" Description="Optional Anime-Loads login." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Anime-Loads Password" Target="AL_PASS" Default="" Mode="" Description="Optional Anime-Loads password." Type="Variable" Display="advanced" Required="false" Mask="true"/>
+</Container>
